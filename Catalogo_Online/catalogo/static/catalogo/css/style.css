@@ -1,0 +1,198 @@
+/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+header {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-bottom: 4px solid #2e7d32;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+header h1 {
+    color: #66bb6a;
+    font-size: 2.2rem;
+    text-align: center;
+}
+nav {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+nav a {
+    color: #a5d6a7;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+nav a:hover {
+    background: #2e7d32;
+    color: white;
+}
+nav span {
+    color: #81c784;
+    padding: 5px 10px;
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* ===== BÚSQUEDA ===== */
+.buscador {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.buscador input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    font-size: 1rem;
+    border: 1px solid #444;
+    transition: border 0.3s;
+}
+.buscador input:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.4);
+}
+.buscador input::placeholder {
+    color: #777;
+}
+
+/* ===== RESULTADOS Y CONTADOR ===== */
+.resumen {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 6px solid #2e7d32;
+    color: #ddd;
+}
+.resumen span {
+    font-weight: bold;
+    color: #81c784;
+}
+#contador-visible {
+    font-weight: bold;
+    color: #a5d6a7;
+}
+
+/* ===== TARJETAS ===== */
+.producto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.producto-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+    border: 1px solid #333;
+}
+.producto-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.producto-card h3 {
+    color: #a5d6a7;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+.producto-card .categoria {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+.producto-card .precio {
+    color: #81c784;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.disponible {
+    background-color: #1b5e20;
+    padding: 3px 8px;
+    border-radius: 20px;
+    color: #c8e6c9;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.no-disponible {
+    background-color: #555;
+    padding: 3px 8px;
+    border-radius: 20px;
+    color: #bbb;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.btn-detalle {
+    display: inline-block;
+    margin-top: 10px;
+    color: #81c784;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-detalle:hover {
+    text-decoration: underline;
+}
+
+/* ===== LOGIN ===== */
+.login-form {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2e7d32;
+}
+.login-form h2 {
+    color: #a5d6a7;
+    text-align: center;
+}
+.login-form button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+.login-form button:hover {
+    background: #1b5e20;
+}

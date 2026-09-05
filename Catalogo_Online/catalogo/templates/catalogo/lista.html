@@ -1,0 +1,41 @@
+{% extends 'catalogo/base.html' %}
+
+{% block content %}
+    <h2 style="color: #a5d6a7;">Catálogo de productos</h2>
+
+    <div class="resumen">
+        <p>
+            Total de productos: <span>{{ total }}</span> |
+            Disponibles: <span>{{ disponibles }}</span> |
+            Mostrando: <span id="contador-visible">{{ total }}</span>
+        </p>
+    </div>
+
+    <!-- Buscador -->
+    <div class="buscador">
+        <input type="text" id="buscador" placeholder="Buscar por nombre o categoría...">
+    </div>
+
+    <div class="producto-grid" id="producto-grid">
+        {% for producto in productos %}
+            <div class="producto-card"
+                 data-id="{{ producto.id }}"
+                 data-nombre="{{ producto.nombre }}"
+                 data-categoria="{{ producto.categoria }}">
+                <h3>{{ producto.nombre }}</h3>
+                <p class="categoria">{{ producto.categoria }}</p>
+                <p class="precio">$ {{ producto.precio|floatformat:2 }}</p>
+                <p>
+                    {% if producto.stock > 0 %}
+                        <span class="disponible">Disponible ({{ producto.stock }})</span>
+                    {% else %}
+                        <span class="no-disponible"> Sin stock</span>
+                    {% endif %}
+                </p>
+                <a href="{% url 'catalogo:detalle' producto.id %}" class="btn-detalle">Ver detalle</a>
+            </div>
+        {% empty %}
+            <p>No hay productos disponibles.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
