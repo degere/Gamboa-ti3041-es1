@@ -1,4 +1,5 @@
 {% extends 'catalogo/base.html' %}
+{% load static %}
 
 {% block content %}
     <h2 style="color: #a5d6a7;">Catálogo de productos</h2>
@@ -11,9 +12,8 @@
         </p>
     </div>
 
-    <!-- Buscador -->
     <div class="buscador">
-        <input type="text" id="buscador" placeholder="Buscar por nombre o categoría...">
+        <input type="text" id="buscador" placeholder="🔍 Buscar por nombre o categoría...">
     </div>
 
     <div class="producto-grid" id="producto-grid">
@@ -22,6 +22,11 @@
                  data-id="{{ producto.id }}"
                  data-nombre="{{ producto.nombre }}"
                  data-categoria="{{ producto.categoria }}">
+                 
+                <img src="{% static 'catalogo/img/' %}{{ producto.imagen }}"
+                     alt="{{ producto.nombre }}"
+                     style="width:100%; height:150px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+
                 <h3>{{ producto.nombre }}</h3>
                 <p class="categoria">{{ producto.categoria }}</p>
                 <p class="precio">$ {{ producto.precio|floatformat:2 }}</p>

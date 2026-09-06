@@ -9,11 +9,11 @@
 </head>
 <body>
     <header>
-        <h1> Ferretería "El Tornillo"</h1>
+        <h1>Ferretería "El Tornillo"</h1>
         <nav>
             <a href="{% url 'catalogo:lista' %}">Inicio</a>
             {% if user.is_authenticated %}
-                <span> Hola, <strong>{{ user.username }}</strong></span>
+                <span>Hola, <strong>{{ user.username }}</strong></span>
                 {% if user.is_staff %}
                     <a href="{% url 'admin:index' %}" style="color: #ffb74d;">Admin</a>
                 {% endif %}
